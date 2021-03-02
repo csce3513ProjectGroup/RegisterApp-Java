@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	getMainMenuActionElement().addEventListener(
 		"click",
 		() => {window.location.assign("/mainMenu");});
-}
+});
 function findClickedListItemElement(clickedTarget) {
 	if (clickedTarget.tagName.toLowerCase() === "li") {
 		return clickedTarget;
