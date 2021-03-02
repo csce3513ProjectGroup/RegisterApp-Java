@@ -16,7 +16,7 @@ import edu.uark.registerapp.controllers.enums.ViewNames;
 import edu.uark.registerapp.models.entities.ActiveUserEntity;
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/mainMenu")
 public class MainMenuRouteController extends BaseRouteController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView start(
