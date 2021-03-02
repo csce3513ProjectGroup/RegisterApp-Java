@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const productListElements = document.getElementById("productsListing").children;
-	// test main menu button
-	getMainMenuActionElement().addEventListener(
-		"click",
-		() => {window.location.assign("/mainMenu");});
 	
 	for (let i = 0; i < productListElements.length; i++) {
 		productListElements[i].addEventListener("click", productClick);
 	}
 });
-
+document.addEventListener("DOMContentLoaded", function(event) {
+	// test main menu button
+	getMainMenuActionElement().addEventListener(
+		"click",
+		() => {window.location.assign("/mainMenu");});
+}
 function findClickedListItemElement(clickedTarget) {
 	if (clickedTarget.tagName.toLowerCase() === "li") {
 		return clickedTarget;
