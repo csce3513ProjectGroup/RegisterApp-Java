@@ -88,7 +88,7 @@ public abstract class BaseRouteController extends BaseController {
 			REDIRECT_PREPEND.concat(
 				redirectRoute.concat(
 					this.buildInitialQueryParameter(
-						QueryParameterNames.ERROR_CODE.getValue(),
+						QueryParameterNames.ERROR_CODE.getValue() + 20,
 						QueryParameterMessages.NO_PERMISSIONS_TO_VIEW.getKeyAsString()))));
 	}
 
