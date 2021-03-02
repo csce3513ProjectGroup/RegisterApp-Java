@@ -7,16 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.uark.registerapp.commands.VoidCommandInterface;
 import edu.uark.registerapp.models.repositories.EmployeeRepository;
 import edu.uark.registerapp.models.repositories.ActiveUserRepository;
+
+// import edu.uark.registerapp.commands.VoidCommandInterface;
+import edu.uark.registerapp.commands.employees.helpers.EmployeeHelper;
 import edu.uark.registerapp.models.entities.EmployeeEntity;
+
+import edu.uark.registerapp.commands.exceptions.UnauthorizedException;
 import edu.uark.registerapp.commands.exceptions.UnprocessableEntityException;
 
 @Service
 public class EmployeeSignInCommand { // implements VoidCommandInterface {
     // Properties: EmployeeSignIn object and Current Session Key
-        // where do I get session key?
+        // sessionKey is passed to the method when called (I think) -KR
     
     @Transactional
     // @Override
@@ -40,10 +44,16 @@ public class EmployeeSignInCommand { // implements VoidCommandInterface {
             
             // verify that the employee exists
             // verify that the password provided matches the database value
-                // use Arrays.equal() -- TODO: Access the password stored in the entity.
-        // if (!employee.isPresent() || !Arrays.equals(password, )) {
-
-        // }
+                // use Arrays.equal()
+        if (!employee.isPresent() || !Arrays.equals(EmployeeHelper.hashPassword(password), employee.get().getPassword())) {
+            throw new UnauthorizedException();
+        }
+        else {
+            //sign employee in
+            // signIn(employee);
+        }
+    }
+    private EmployeeEntity signIn(final EmployeeEntity employee) {
         // Query the activeuser table for a record with the given employee ID
             // EmployeeRepository again I think but what method?
             // Use @Transactional annotation on method
@@ -59,6 +69,7 @@ public class EmployeeSignInCommand { // implements VoidCommandInterface {
                         // ActiveUserEntity.java: id, classification, name, employeeId, sessionKey
                 // use the existing ActiveUserRepository.save() method
             //}
+        return employee;
     }
 
     // Properties (Based on Product Codes)

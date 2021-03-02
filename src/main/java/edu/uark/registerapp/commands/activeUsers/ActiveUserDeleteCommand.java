@@ -16,7 +16,7 @@ public class ActiveUserDeleteCommand implements VoidCommandInterface {
     @Transactional
     @Override
     public void execute() {
-        //TODO: Validate the incoming Employee request object
+        //Validate the incoming Employee request object
             // First and Last Name should not be blank
         // Query the activeuser table for a record with the provided session key
             // use the existing ActiveUserRepository.findBySessionKey() method

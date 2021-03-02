@@ -21,6 +21,7 @@ public class EmployeeHelper {
 		// Hash the password using a MessageDigest. An example can be found at http://tutorials.jenkov.com/java-cryptography/messagedigest.html
 		try {
 			final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+			
 			// I don't think it's necessary to do messageDigest.update(password.getBytes());
 			// and return messageDigest.digest(); since 
 				// 1) there's only one piece of data
