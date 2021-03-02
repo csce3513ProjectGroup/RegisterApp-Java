@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		"click",
 		() => { 
 			window.location.assign("/mainMenu"); 
-			document.getElementById("mainMenuButton").innerHTML = "TEST";
+			window.alert("TEST");
 			});
 	
 	for (let i = 0; i < productListElements.length; i++) {
