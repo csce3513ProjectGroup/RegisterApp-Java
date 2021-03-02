@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	// test main menu button
 	getMainMenuActionElement().addEventListener(
 		"click",
-		() => { window.location.assign("/mainMenu"); });
+		() => { 
+			window.location.assign("/mainMenu"); 
+			document.getElementById("maineMenuButton").innerHTML = "TEST";
+			});
 	
 	for (let i = 0; i < productListElements.length; i++) {
 		productListElements[i].addEventListener("click", productClick);
