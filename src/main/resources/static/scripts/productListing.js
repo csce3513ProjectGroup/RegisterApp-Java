@@ -30,7 +30,7 @@ function findClickedListItemElement(clickedTarget) {
 	}
 }
 
-function getViewProductsActionElement() {
+function getMainMenuActionElement() {
 	return document.getElementById("mainMenuButton");
 }
 
