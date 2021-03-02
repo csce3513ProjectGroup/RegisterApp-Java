@@ -21,16 +21,18 @@ public class ActiveUserDeleteCommand implements VoidCommandInterface {
         // Query the activeuser table for a record with the provided session key
             // use the existing ActiveUserRepository.findBySessionKey() method
             // based on ProductDetailCommand.java
-        final Optional<ActiveUserEntity> activeUserRecord = this.activeUserRepository.findBySessionKey(this.sessionKey);
+        final Optional<ActiveUserEntity> activeUserRecord = 
+            this.activeUserRepository.findBySessionKey(this.sessionKey); // activeUserRecord == activeUserEntity
         
         // Make sure record exists in database
         if (!activeUserRecord.isPresent()) {
             throw new NotFoundException("User");
         }
-        
-        // Delete the activeuser record
-            // use the existing ActiveUserRepository.delete() method
-        this.activeUserRepository.delete(activeUserRecord.get());
+        else {
+            // Delete the activeuser record
+                // use the existing ActiveUserRepository.delete() method
+            this.activeUserRepository.delete(activeUserRecord.get());
+        }
     }
 
     // Properties: Current sessionKey
