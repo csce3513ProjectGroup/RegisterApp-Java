@@ -17,6 +17,14 @@
 	</div>
 		
 	<div id="main" class="main">
+		<body> <!- need to change url ->
+		<input type="button" value="Start Transaction" onclick="alert('Functionality has not yet been implemented.')">
+		<a href="productListing.html">View Products</a>		<!-- productListing is navigated -->
+		<a href="productDetail.html">Create Employee</a>	<!-- productDetail is navigated -->
+		<input type="button" value="Sales Report" onclick="alert('Functionality has not yet been implemented.')">
+		<input type="button" value="Cashier Report" onclick="alert('Functionality has not yet been implemented.')">
+    		</body>
+		
 		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
