@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.uark.registerapp.commands.employees.ActiveEmployeeExistsQuery;
 import edu.uark.registerapp.commands.employees.EmployeeSignInCommand;
@@ -24,7 +25,8 @@ import java.util.Map;
 public class SignInRouteController extends BaseRouteController {
 	//Route for initial page load
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView showSignIn(@RequestParma final Map<String, String> queryParameters)
+	public ModelAndView showSignIn(@RequestParam final Map<String, String> queryParameters)
+		
 	{
 		try {
 			this.activeEmployeeExistsQuery.execute();
