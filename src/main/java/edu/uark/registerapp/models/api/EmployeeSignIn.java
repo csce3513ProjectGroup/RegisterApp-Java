@@ -1,6 +1,6 @@
 package edu.uark.registerapp.models.api;
 
-// import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class EmployeeSignIn {
     private String employeeId;
@@ -8,8 +8,10 @@ public class EmployeeSignIn {
 
     public EmployeeSignIn() {
         // VARIANCE: Might need to use StringUtils.Empty instead of ""
-        this.password = "";
-        this.employeeId = "";
+        // this.password = "";
+        // this.employeeId = "";
+        this.password = StringUtils.EMPTY;
+		this.employeeId = StringUtils.EMPTY;
     }
 
     // get methods

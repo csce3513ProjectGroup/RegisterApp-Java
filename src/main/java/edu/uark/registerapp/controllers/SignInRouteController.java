@@ -21,7 +21,7 @@ import edu.uark.registerapp.models.api.EmployeeSignIn;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/signIn")
 public class SignInRouteController extends BaseRouteController {
 	//Route for initial page load
 	@RequestMapping(method = RequestMethod.GET)
@@ -54,7 +54,7 @@ public class SignInRouteController extends BaseRouteController {
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public ModelAndView performSignIn(
 		// TODO: Define an object that will represent the sign in request and add it as a parameter here
-		EmployeesSignIn employeeSignIn,
+		EmployeeSignIn employeeSignIn,
 		HttpServletRequest request
 	) {
 
