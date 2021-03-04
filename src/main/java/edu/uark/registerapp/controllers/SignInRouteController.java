@@ -29,13 +29,13 @@ public class SignInRouteController extends BaseRouteController {
 		
 	{
 		// if signed in go to main menu, if no active users go to signIn
-		 try {
-		 	this.activeEmployeeExistsQuery.execute();
-		 } catch (NotFoundException e) {
-		 	return new ModelAndView(
-		 		REDIRECT_PREPEND.concat(
-		 			ViewNames.EMPLOYEE_DETAIL.getRoute()));
-		 }
+//		 try {
+//		 	this.activeEmployeeExistsQuery.execute();
+//		 } catch (NotFoundException e) {
+//		 	return new ModelAndView(
+//		 		REDIRECT_PREPEND.concat(
+//		 			ViewNames.EMPLOYEE_DETAIL.getRoute()));
+//		 }
 
 		ModelAndView modelAndView =
 			this.setErrorMessageFromQueryString(
@@ -55,36 +55,36 @@ public class SignInRouteController extends BaseRouteController {
 	// @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// public ModelAndView performSignIn(
 	// 	// TODO: Define an object that will represent the sign in request and add it as a parameter here
-	// 	EmployeeSignIn employeeSignIn,
-	// 	HttpServletRequest request
-	// ) {
+	 	EmployeeSignIn employeeSignIn,
+	 	HttpServletRequest request
+	 ) {
 
 
-	// 	// sign in the user
-	// 	try {
-	// 		this.employeeSignInCommand
-	// 			.setSessionId(request.getSession().getId())
-	// 			.setEmployeeSignIn(employeeSignIn)
-	// 			.execute();
-	// 	} catch (Exception e) {
-	// 		ModelAndView modelAndView =
-	// 			new ModelAndView(ViewNames.SIGN_IN.getViewName());
+	 	// sign in the user
+	 	try {
+	 		this.employeeSignInCommand
+	 			.setSessionId(request.getSession().getId())
+	 			.setEmployeeSignIn(employeeSignIn)
+	 			.execute();
+	 	} catch (Exception e) {
+	 		ModelAndView modelAndView =
+	 			new ModelAndView(ViewNames.SIGN_IN.getViewName());
 
-	// 		modelAndView.addObject(
-	// 			ViewModelNames.ERROR_MESSAGE.getValue(),
-	// 			e.getMessage());
-	// 		modelAndView.addObject(
-	// 			ViewModelNames.EMPLOYEE_ID.getValue(),
-	// 			employeeSignIn.getEmployeeId());
+	 		modelAndView.addObject(
+	 			ViewModelNames.ERROR_MESSAGE.getValue(),
+	 			e.getMessage());
+	 		modelAndView.addObject(
+	 			ViewModelNames.EMPLOYEE_ID.getValue(),
+	 			employeeSignIn.getEmployeeId());
 
-	// 		return modelAndView;
-	// 	}
+	 		return modelAndView;
+	 	}
 
-	// 	return new ModelAndView(
-	// 		REDIRECT_PREPEND.concat(
-	// 			ViewNames.MAIN_MENU.getRoute()));
+	 	return new ModelAndView(
+	 		REDIRECT_PREPEND.concat(
+	 			ViewNames.MAIN_MENU.getRoute()));
 	
-	// }
+	 }
 	//Properties
 	@Autowired
 	private EmployeeSignInCommand employeeSignInCommand;
