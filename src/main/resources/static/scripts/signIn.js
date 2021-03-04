@@ -9,7 +9,7 @@ function validateForm() {
 	if (employeeId != '' && password != ''){
 		if (isNaN(employeeId)) {
 			document.getElementById("errorMessage").innerHTML = "You can use only index"
-			console.log("I'm here 1");
+			alert("You can use only index");
 		}
 		else {
 			//TODO: invoke sign in
@@ -20,7 +20,7 @@ function validateForm() {
 	}
 	else{
 		document.getElementById("errorMessage").innerHTML = "Please do not keep blank Employee ID & Password"
-		console.log("I'm here 3");
+		alert("Please do not keep blank Employee ID & Password");
 		return false;
 	}
 }
