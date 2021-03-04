@@ -14,7 +14,7 @@ function validateForm() {
 		else {
 			//TODO: invoke sign in
 			document.getElementById("errorMessage").innerHTML = "Sign in successful!!"
-			console.log("I'm here 2");
+			document.getElementById("Signin Button").href="/mainMenu/"
 			return true;
 		}
 	}
