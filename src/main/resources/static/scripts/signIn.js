@@ -9,15 +9,18 @@ function validateForm() {
 	if (employeeId != '' && password != ''){
 		if (isNaN(employeeId)) {
 			document.getElementById("errorMessage").innerHTML = "You can use only index"
+			console.log("I'm here 1");
 		}
 		else {
 			//TODO: invoke sign in
 			document.getElementById("errorMessage").innerHTML = "Sign in successful!!"
+			console.log("I'm here 2");
 			return true;
 		}
 	}
 	else{
 		document.getElementById("errorMessage").innerHTML = "Please do not keep blank Employee ID & Password"
+		console.log("I'm here 3");
 		return false;
 	}
 }
