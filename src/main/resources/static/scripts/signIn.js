@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function validateForm() {
-	// TODO: Validate the user input
-	//get value of Employee ID and Password
 	var employeeId = document.getElementById("employeeId").value;
 	var password = document.getElementById("password").value;
 
