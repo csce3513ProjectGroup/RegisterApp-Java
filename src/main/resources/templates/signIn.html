@@ -40,18 +40,26 @@
 			
 			<h2 align="center" class="primary-message">sign in</h2>
 	
-			<div>
-			<label>&emsp; &emsp;Employee ID :</label>
-			<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="text">
-			</div><br>
+		//	<div>
+		//	<label>&emsp; &emsp;Employee ID :</label>
+		//	<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="text">
+		//	</div><br>
 
-			<div>
-			<label>&emsp; &emsp; &emsp;Password :</label>
-			<input id="password" name="password" placeholder="Password" type="text">
-			</div>
+		//	<div>
+		//	<label>&emsp; &emsp; &emsp;Password :</label>
+		//	<input id="password" name="password" placeholder="Password" type="text">
+		//	</div>
 
 			<div class="center">
-			<button onclick="validateForm(); return false;">Sign In</button><br>
+				
+				 <form action = "mainMenu.html">
+  <label for="userId">Employee ID:</label><br>
+  <input type="number" id="employeeId" name="userId"><br>
+  <label for="userPassword">Password:</label><br>
+  <input type="password" id="password" name="userPassword"><br>
+  <br>
+  <input type="submit" id="signIn" name="signIn">
+			//<button onclick="validateForm(); return false;">Sign In</button><br>
 			</div>
 				
 		</form>
