@@ -5,12 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		productListElements[i].addEventListener("click", productClick);
 	}
 });
-document.addEventListener("DOMContentLoaded", function(event) {
-	// test main menu button
-	getMainMenuActionElement().addEventListener(
-		"click",
-		() => {window.location.assign("/mainMenu");});
-});
 function findClickedListItemElement(clickedTarget) {
 	if (clickedTarget.tagName.toLowerCase() === "li") {
 		return clickedTarget;
@@ -30,9 +24,6 @@ function findClickedListItemElement(clickedTarget) {
 	}
 }
 
-function getMainMenuActionElement() {
-	return document.getElementById("mainMenuButton");
-}
 
 function productClick(event) {
 	let listItem = findClickedListItemElement(event.target);
