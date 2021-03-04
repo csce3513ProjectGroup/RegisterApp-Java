@@ -11,6 +11,7 @@ function validateForm() {
 			document.getElementById("errorMessage").innerHTML = "You can use only index"
 		}
 		else {
+			//TODO: invoke sign in
 			document.getElementById("errorMessage").innerHTML = "Sign in successful!!"
 			return true;
 		}
