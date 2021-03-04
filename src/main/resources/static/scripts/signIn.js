@@ -13,8 +13,8 @@ function validateForm() {
 		}
 		else {
 			//TODO: invoke sign in
+			//TODO: incorrect password error alert
 			document.getElementById("errorMessage").innerHTML = "Sign in successful!!"
-			console.log("I'm here 2");
 			return true;
 		}
 	}
