@@ -27,7 +27,7 @@ import edu.uark.registerapp.commands.exceptions.UnauthorizedException;
 import edu.uark.registerapp.commands.exceptions.UnprocessableEntityException;
 
 @Service
-public class EmployeeSignInCommand implements ResultCommandInterface<Employee> { // implements VoidCommandInterface {
+public class EmployeeSignInCommand implements ResultCommandInterface<Employee> { 
     @Override
 	public Employee execute() {
 		this.validateProperties();
