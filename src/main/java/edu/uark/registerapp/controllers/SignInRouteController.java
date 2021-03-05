@@ -33,7 +33,7 @@ public class SignInRouteController extends BaseRouteController {
 		 } catch (NotFoundException e) {
 		 	return new ModelAndView(
 		 		REDIRECT_PREPEND.concat(
-		 			ViewNames.MAIN_MENU.getRoute()));
+		 			ViewNames.SIGN_IN.getRoute()));
 		 }
 
 		ModelAndView modelAndView =
