@@ -35,6 +35,7 @@ public class SignInRouteController extends BaseRouteController {
 			 System.out.println("I got in the catch");
 		 	return new ModelAndView(
 		 		REDIRECT_PREPEND.concat(
+					//MAIN_MENU should be changed to SIGN_IN
 		 			ViewNames.MAIN_MENU.getRoute()));
 		 }
 
