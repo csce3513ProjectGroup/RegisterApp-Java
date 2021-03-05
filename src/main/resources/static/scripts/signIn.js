@@ -15,7 +15,7 @@ function validateForm() {
 			//TODO: invoke sign in
 			//TODO: incorrect password error alert
 			document.getElementById("errorMessage").innerHTML = "Sign in successful!!"
-			document.getElementById("Signin Button").href="/mainMenu"
+			//document.getElementById("Signin Button").href="/mainMenu"
 			return true;
 		}
 	}
