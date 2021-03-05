@@ -41,3 +41,11 @@ function getCashierSalesReportActionElement() {
 	return document.getElementById("cashierSalesReportButton");
 }
 // End getters and setters
+
+function makeButtonsAppear()
+{
+	if ($isisElevatedUser)
+	{
+		document.getElementById("buttons").style="visible"
+	}
+}
