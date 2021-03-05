@@ -183,7 +183,7 @@ table.hidden, tr.hidden, th.hidden, td.hidden {
 .gray-blue {
 	color: #607D8B!important;
 }
-.signOutImage {
+#signOutImage {
 	max-width: 50%;
 	height: auto;
 }
