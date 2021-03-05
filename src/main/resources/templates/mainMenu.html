@@ -18,12 +18,12 @@
 	</div>
 		
 	<div id="main" class="main">
-		<body> <!- need to change url ->
+		<body> <!-- need to change url 
 		<input type="button" value="Start Transaction" onclick="alert('Functionality has not yet been implemented.')">
-		<a href="productListing.html">View Products</a>		<!-- productListing is navigated -->
-		<a href="productDetail.html">Create Employee</a>	<!-- productDetail is navigated -->
+		<a href="productListing.html">View Products</a> 		<!-- productListing is navigate
+		<a href="productDetail.html">Create Employee</a>	 productDetail is navigated
 		<input type="button" value="Sales Report" onclick="alert('Functionality has not yet been implemented.')">
-		<input type="button" value="Cashier Report" onclick="alert('Functionality has not yet been implemented.')">
+		<input type="button" value="Cashier Report" onclick="alert('Functionality has not yet been implemented.')"> -->
     		</body>
 		
 		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
@@ -34,12 +34,12 @@
 		<div id = "middleBox">
 			<div>
 				
-				<a class="button menuButton">Start Transaction</a><br>
+				<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')" >Start Transaction</a><br>
 				<a href="/productListing/" class="button menuButton">View Products</a><br>
 				<div th:class="not ${isElevatedUser} ? hidden : ''">
-					<a class="button menuButton">Create Employee</a><br>
-					<a class="button menuButton">Sales Report</a><br>
-					<a class="button menuButton">Cashier Report</a><br>
+					<a class="button menuButton" >Create Employee</a><br>
+					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Sales Report</a><br>
+					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Cashier Report</a><br>
 				</div>
 				
 			</div>
