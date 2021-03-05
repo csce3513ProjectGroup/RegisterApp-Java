@@ -80,7 +80,7 @@ public abstract class BaseRouteController extends BaseController {
 	}
 
 	protected ModelAndView buildNoPermissionsResponse() {
-		return this.buildNoPermissionsResponse(ViewNames.MAIN_MENU.getRoute());
+		return this.buildNoPermissionsResponse(ViewNames.SIGN_IN.getRoute());
 	}
 
 	protected ModelAndView buildNoPermissionsResponse(final String redirectRoute) {
