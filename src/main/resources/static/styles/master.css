@@ -187,4 +187,7 @@ table.hidden, tr.hidden, th.hidden, td.hidden {
 	max-width: 50%;
 	height: auto;
 }
+body {
+	font-family:Arial, sans-serif;
+}
 /* End product saved alert modal */
