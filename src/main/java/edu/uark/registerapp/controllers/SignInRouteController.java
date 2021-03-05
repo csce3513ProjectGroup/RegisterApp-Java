@@ -36,7 +36,7 @@ public class SignInRouteController extends BaseRouteController {
 		 	return new ModelAndView(
 		 		REDIRECT_PREPEND.concat(
 					//MAIN_MENU should be changed to SIGN_IN
-		 			ViewNames.SIGN_IN.getRoute()));
+		 			ViewNames.EMPLOYEE_DETAIL.getRoute()));
 		 }
 
 		ModelAndView modelAndView =
