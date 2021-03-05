@@ -16,11 +16,11 @@
 		<h1 class="primary-message">Products Listing</h1>
 	</div>
 
-	<div id="main middleBox" class="main">
+	<div id="main " class="main">
 		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
-		<div class="productsWrapper">
+		<div id = "middleBox" class="productsWrapper">
 			<div>
 				<a href="/productDetail/" class="button">Create New</a>
 			</div>
