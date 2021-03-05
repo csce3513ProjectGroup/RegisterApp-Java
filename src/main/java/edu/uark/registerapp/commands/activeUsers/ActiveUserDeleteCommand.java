@@ -33,6 +33,11 @@ public class ActiveUserDeleteCommand implements VoidCommandInterface {
                 // use the existing ActiveUserRepository.delete() method
             this.activeUserRepository.delete(activeUserRecord.get());
         }
+
+//	    if (activeUserEntity.isPresent()) {
+//			this.activeUserRepository.delete(activeUserEntity.get());
+//		}
+   
     }
 
     // Properties: Current sessionKey
