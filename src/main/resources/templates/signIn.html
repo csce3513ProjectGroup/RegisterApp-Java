@@ -31,10 +31,9 @@
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
 		
-		<form action="#" method="post" onsubmit="return ValidationEvent()">
-			<!-- TODO: Form input elements -->
-			<!-- below are blank text for Employee ID and Password -->
-		
+		<!--<form action="#" method="post" onsubmit="return ValidationEvent()">-->
+
+		<form action="/" method="POST" onsubmit="return validateForm();" class="inputContent">
 			<body bgcolor="#54221a"><br><br>
 			<table align="center" cellpadding="2" border="1" bgcolor="#ffbb91" width="400"><tbody><tr><td>
 			
@@ -42,16 +41,13 @@
 	
 			<div>
 			<label>&emsp; &emsp;Employee ID :</label>
-			<!--	Pretty sure type willn need to be number or equivilent.
-			<input id="employeeId" name="employeeId" type="number" placeholder="Emplyee ID" type="text"> -->
-			<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="text">
+			<input id="employeeId" name="employeeId" type="number" placeholder="Emplyee ID" class="update" th:value="${employeeId}" /> 
+			<!--<input id="employeeId" name="employeeId" placeholder="Employee ID" type="number"> -->
 			</div><br>
 
 			<div>
 			<label>&emsp; &emsp; &emsp;Password :</label>
-			<!--	Pretty sure the type will need to be password.
-			<input id="password" name="password" type="password" placeholder="Password" type="text">-->
-			<input id="password" name="password" placeholder="Password" type="text">
+			<input id="password" name="password" type="password" placeholder="Password" class="update" />
 			</div>
 		
 			<div class="center">
@@ -66,7 +62,8 @@
 			//
 				
 		</form> -->
-				<button onclick="validateForm(); return false;">Sign In</button><br>
+				<input type="submit" value="Sign In" class="submit" />
+				<!--<button onclick="validateForm(); return false;">Sign In</button><br>-->
 			</div>
 	</div>
 		
