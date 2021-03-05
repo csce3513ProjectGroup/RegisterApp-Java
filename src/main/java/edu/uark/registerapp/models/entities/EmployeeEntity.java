@@ -61,14 +61,26 @@ public class EmployeeEntity {
 		return this;
 	}
 
-	@Column(name = "password")
-	private byte[] password;
+	// @Column(name = "password")
+	// private byte[] password;
 
-	public byte[] getPassword() {
+	// public byte[] getPassword() {
+	// 	return this.password;
+	// }
+
+	// public EmployeeEntity setPassword(final byte[] password) {
+	// 	this.password = password;
+	// 	return this;
+	// }
+
+	@Column(name = "password")
+	private String password;
+
+	public String getPassword() {
 		return this.password;
 	}
 
-	public EmployeeEntity setPassword(final byte[] password) {
+	public EmployeeEntity setPassword(final String password) {
 		this.password = password;
 		return this;
 	}
@@ -127,9 +139,14 @@ public class EmployeeEntity {
 		}
 		if (!StringUtils.isBlank(apiEmployee.getPassword())) {
 			this.setPassword(
-				EmployeeHelper.hashPassword(
-					apiEmployee.getPassword()));
+					apiEmployee.getPassword());
 		}
+
+		// if (!StringUtils.isBlank(apiEmployee.getPassword())) {
+		// 	this.setPassword(
+		// 		EmployeeHelper.hashPassword(
+		// 			apiEmployee.getPassword()));
+		// }
 
 		apiEmployee.setId(this.getId());
 		apiEmployee.setCreatedOn(this.getCreatedOn());
@@ -143,7 +160,8 @@ public class EmployeeEntity {
 		this.isActive = false;
 		this.id = new UUID(0, 0);
 		this.classification = -1;
-		this.password = new byte[0];
+		// this.password = new byte[0];
+		this.password = StringUtils.EMPTY;
 		this.managerId = new UUID(0, 0);
 		this.lastName = StringUtils.EMPTY;
 		this.firstName = StringUtils.EMPTY;
@@ -155,7 +173,8 @@ public class EmployeeEntity {
 		this.lastName = apiEmployee.getLastName();
 		this.firstName = apiEmployee.getFirstName();
 		this.classification = apiEmployee.getClassification();
-		this.password = EmployeeHelper.hashPassword(apiEmployee.getPassword());
+		// this.password = EmployeeHelper.hashPassword(apiEmployee.getPassword());
+		this.password = apiEmployee.getPassword();
 		this.managerId = (
 			(apiEmployee.getManagerId() != null)
 				? apiEmployee.getManagerId()

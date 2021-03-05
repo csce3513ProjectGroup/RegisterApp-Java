@@ -15,7 +15,7 @@ import edu.uark.registerapp.models.repositories.ActiveUserRepository;
 
 // import edu.uark.registerapp.commands.VoidCommandInterface;
 import edu.uark.registerapp.commands.ResultCommandInterface;
-import edu.uark.registerapp.commands.employees.helpers.EmployeeHelper;
+// import edu.uark.registerapp.commands.employees.helpers.EmployeeHelper;
 
 import edu.uark.registerapp.models.api.Employee;
 import edu.uark.registerapp.models.api.EmployeeSignIn;
@@ -56,15 +56,14 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 			this.employeeRepository.findByEmployeeId(
 				Integer.parseInt(this.employeeSignIn.getEmployeeId()));
 
-		if (!employeeEntity.isPresent()
-			|| !Arrays.equals(
-				employeeEntity.get().getPassword(),
-				EmployeeHelper.hashPassword(this.employeeSignIn.getPassword()))
-		) {
-
+		if (!employeeEntity.isPresent() 
+			|| !(employeeEntity.get().getPassword().equals(this.employeeSignIn.getPassword()))) {
+			// Check hashed passwords (table password was being stored as a byte[]) 
+				// || !Arrays.equals(employeeEntity.get().getPassword(), 
+					// EmployeeHelper.hashPassword(this.employeeSignIn.getPassword()))) {
 			throw new UnauthorizedException();
 		}
-
+		
 		final Optional<ActiveUserEntity> activeUserEntity =
 			this.activeUserRepository
 				.findByEmployeeId(employeeEntity.get().getId());
