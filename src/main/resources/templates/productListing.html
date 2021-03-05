@@ -20,7 +20,6 @@
 		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
-
 		<div class="productsWrapper">
 			<div>
 				<a href="/productDetail/" class="button">Create New</a>
@@ -42,7 +41,6 @@
 					<br />&nbsp;&nbsp;<span class="productCreatedOnDisplay" th:text="${product.createdOn}">12/31/1999</span>
 				</li>
 			</ul>
-		</div>
 
 		<div class="hidden">
 			<input type="checkbox" id="isRefreshed" class="hidden">
