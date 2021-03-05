@@ -183,4 +183,8 @@ table.hidden, tr.hidden, th.hidden, td.hidden {
 .gray-blue {
 	color: #607D8B!important;
 }
+.signOutImage {
+	max-width: 50%;
+	height: auto;
+}
 /* End product saved alert modal */
