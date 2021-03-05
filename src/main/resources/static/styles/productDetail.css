@@ -1,3 +1,15 @@
 .productDetailWrapper {
 	display: inline-block;
 }
+body {
+	background-color:#214d9e !important;
+}
+#middleBox {
+	height:auto;
+	width: 98%;
+	border: 2px solid #3a69b0;
+	padding: 10px;
+	margin: auto;
+	background-color:#f0f2f5;
+	display:block;
+}
