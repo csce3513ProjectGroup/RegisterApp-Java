@@ -30,13 +30,11 @@ public class SignInRouteController extends BaseRouteController {
 		// if signed in go to main menu, if no active users go to signIn
 		 try {
 		 	this.activeEmployeeExistsQuery.execute();
-			 System.out.println("I got in the try");
 		 } catch (NotFoundException e) {
-			 System.out.println("I got in the catch");
 		 	return new ModelAndView(
 		 		REDIRECT_PREPEND.concat(
 					//MAIN_MENU should be changed to SIGN_IN
-		 			ViewNames.EMPLOYEE_DETAIL.getRoute()));
+		 			ViewNames.MAIN_MENU.getRoute()));
 		 }
 
 		ModelAndView modelAndView =
