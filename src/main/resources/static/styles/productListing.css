@@ -3,7 +3,8 @@
 }
 
 .products {
-	margin: 0 0 2em 0;
+	margin-left:auto;
+	margin-right:auto;
 	list-style-type: none;
 	padding: 0;
 	width: 15em;
@@ -27,4 +28,18 @@
 
 a.button {
 	text-decoration: none;
+}
+
+#middleBox {
+	height:auto;
+	width: 98%;
+	border: 2px solid #3a69b0;
+	padding: 10px;
+	margin: auto;
+	background-color:#f0f2f5;
+	display:block;
+}
+
+body {
+	background-color:#214d9e !important;
 }

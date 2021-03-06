@@ -1,0 +1,74 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Register - Main Menu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" type="text/css" href="/styles/master.css">
+	<link rel="stylesheet" type="text/css" href="/styles/mainMenu.css">
+	
+	<script type="text/javascript" src="/scripts/master.js" defer></script>
+	<script type="text/javascript" src="/scripts/mainMenu.js" defer></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<h1 class="primary-message">Main Menu</h1>
+	</div>
+		
+	<div id="main" class="main">
+		<body> <!-- I commented out below function so that not cause design error
+		<button id="startTransactionButton" onclick="getStartTransactionActionElement()">Start Transaction</button>
+		<button id="viewProductsButton" onclick="getViewProductsActionElement()">View Products</button>
+		<button id="createEmployeeButton" onclick="getCreateEmployeeActionElement()">Create Employee</button>
+		<button id="productSalesReportButton" onclick="getProductSalesReportActionElement()">Sales Report</button>
+		<button id="cashierSalesReportButton" onclick="getCashierSalesReportActionElement()">Cashier Report</button>
+		-->
+    		</body>
+		
+		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
+			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
+		</div>
+
+		<!-- TODO: Add the various action button elements -->
+		
+		<div id = "middleBox">
+			<div>
+				<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')" >Start Transaction</a><br>
+				<a href="/productListing/" class="button menuButton">View Products</a><br>
+				<!-- <div th:style="not ${isElevatedUser} ? '' : 'display:none !important' "> -->
+					<div th:class="not ${isElevatedUser} ? hidden : ''" >
+				<!-- <div th:class="not ${isElevatedUser} ? hidden : ''" style = "visibility:hidden;" id="buttons"> -->
+					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Create Employee</a><br>
+					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Sales Report</a><br>
+					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Cashier Report</a><br>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="hidden">
+		<input type="checkbox" id="isRefreshed" class="hidden">
+		<script type="text/javascript">
+			window.onunload = function() {
+				const isRefreshedElement = document.getElementById("isRefreshed");
+
+				if(!isRefreshedElement.checked) {
+					isRefreshedElement.checked = true;
+				} else {
+					isRefreshedElement.checked = false;
+					location.reload();
+				}
+			}
+		</script>
+	</div>
+
+	<div class="footer">
+		<img src = "/images/signOut.png" id="signOutImage" alt="Sign Out" class="footer" />
+	</div>
+		
+</body>
+
+</html>

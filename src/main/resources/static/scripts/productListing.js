@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const productListElements = document.getElementById("productsListing").children;
-
+	
 	for (let i = 0; i < productListElements.length; i++) {
 		productListElements[i].addEventListener("click", productClick);
 	}
 });
-
 function findClickedListItemElement(clickedTarget) {
 	if (clickedTarget.tagName.toLowerCase() === "li") {
 		return clickedTarget;
@@ -24,6 +23,7 @@ function findClickedListItemElement(clickedTarget) {
 		return (ancestorIsListItem ? ancestorElement : null);
 	}
 }
+
 
 function productClick(event) {
 	let listItem = findClickedListItemElement(event.target);

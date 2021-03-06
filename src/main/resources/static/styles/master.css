@@ -1,6 +1,7 @@
 div.header {
 	padding-top: 1px;
 	text-align: right;
+	color: white;
 }
 
 div.main {
@@ -30,6 +31,24 @@ td.hidden {
 	display: none
 }
 
+div.footer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+img.footer {
+	z-index: 1;
+	height: 50px;
+    text-decoration: none;
+    display: inline-block;
+	cursor: pointer;
+	position: fixed;
+	right: 20;
+	bottom: 20;
+}
+
 div.inputContent,
 form.inputContent {
 	display: inline-block;
@@ -48,7 +67,7 @@ input[type=number] {
 }
 
 input.update {
-	border: solid;
+	border:  2px solid #ededed;
 	line-height: 1.75em;
 	width: calc(100% - 6px);
 	background-color: #FFFFFF;
@@ -59,20 +78,16 @@ input.update {
 button.action,
 a.button,
 input.submit {
-    margin: 0;
-    border: 0;
     font-size: 18px;
-    width: 200px;
-    height: 50px;
     text-align: center;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-user-select: none;
-    color: #000000;
-    border: solid;
-    padding: 10px;
-    background-color: #FFFFFF;
+    color: #f0f2f5;
+    border: solid #3a69b0;
+    padding-top: 5px;
+    background-color: #214d9e;
     cursor: default;
 	text-decoration: none;
 }
@@ -81,8 +96,8 @@ button.action:hover,
 a.button:hover,
 input.submit:hover {
     cursor: pointer;
-    color: #ffffff;
-    background-color: #000000;
+    color: #214d9e;
+    background-color: #f0f2f5;
 }
 
 /* Table style definitions */
@@ -167,5 +182,12 @@ table.hidden, tr.hidden, th.hidden, td.hidden {
 
 .gray-blue {
 	color: #607D8B!important;
+}
+#signOutImage {
+	max-width: 50%;
+	height: auto;
+}
+body {
+	font-family:Arial, sans-serif;
 }
 /* End product saved alert modal */
