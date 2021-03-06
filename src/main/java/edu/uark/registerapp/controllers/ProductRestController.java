@@ -52,7 +52,7 @@ public class ProductRestController {
 			.execute();
 
 		//return new ApiResponse();
-		return new ModelAndView(
+		return new ApiResponse(
 		 		REDIRECT_PREPEND.concat(
 		 			ViewNames.PRODUCT_LISTING.getRoute()));
 	}
