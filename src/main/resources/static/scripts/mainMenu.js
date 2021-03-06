@@ -1,3 +1,4 @@
+console.log(1);
 document.addEventListener("DOMContentLoaded", function(event) {
 	getStartTransactionActionElement().addEventListener(
 		"click",
@@ -18,8 +19,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	getCashierSalesReportActionElement().addEventListener(
 		"click",
 		() => { displayError("Functionality has not yet been implemented."); });
-});
 
+	// if ($isElevatedUser)
+	// {
+	// 	document.getElementById("buttons").style="visible"
+	// }
+});
+// console.log(2);
+// console.log(isElevatedUser);
 // Getters and setters
 function getViewProductsActionElement() {
 	return document.getElementById("viewProductsButton");

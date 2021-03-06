@@ -40,6 +40,7 @@ public enum EmployeeClassification {
 		return (
 			(employeeClassification == EmployeeClassification.GENERAL_MANAGER)
 			|| (employeeClassification == EmployeeClassification.SHIFT_MANAGER));
+		// return false;
 	}
 
 	private int classification;

@@ -17,9 +17,8 @@ import edu.uark.registerapp.commands.activeUsers.ActiveUserDeleteCommand;
 public class SignInRestController extends BaseRestController {
 	@RequestMapping(value="/signOut", method = RequestMethod.DELETE)
 	public @ResponseBody ApiResponse removeActiveUser(
-		final HttpServletRequest request
-	) {
-
+		final HttpServletRequest request) 
+	{
 		this.activeUserDeleteCommand
 			.setSessionKey(request.getSession().getId())
 			.execute();

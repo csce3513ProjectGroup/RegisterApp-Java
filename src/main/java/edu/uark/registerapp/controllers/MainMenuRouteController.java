@@ -26,10 +26,13 @@ public class MainMenuRouteController extends BaseRouteController {
 
 		final Optional<ActiveUserEntity> activeUserEntity =
 			this.getCurrentUser(request);
-		// if (!activeUserEntity.isPresent()) {
-		// 	return this.buildInvalidSessionResponse();
-		// }
-		
+		if (!activeUserEntity.isPresent()) {
+			return this.buildInvalidSessionResponse();
+		}
+		// If there is an active user for the current session then 
+			// Should add any error messages received in the query string parameters to the view
+			// Should serve up the Main Menu view/document
+
 		ModelAndView modelAndView =
 			this.setErrorMessageFromQueryString(
 				new ModelAndView(ViewNames.MAIN_MENU.getViewName()),
@@ -37,8 +40,7 @@ public class MainMenuRouteController extends BaseRouteController {
 
 		// TODO: Examine the ActiveUser classification if you want this information
 		modelAndView.addObject(
-			ViewModelNames.IS_ELEVATED_USER.getValue(), true);
-			//this.isElevatedUser(activeUserEntity.get()));
+			ViewModelNames.IS_ELEVATED_USER.getValue(), this.isElevatedUser(activeUserEntity.get()));
 		return modelAndView;
 	}
 }

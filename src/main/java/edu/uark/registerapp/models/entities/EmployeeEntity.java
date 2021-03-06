@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
-import edu.uark.registerapp.commands.employees.helpers.EmployeeHelper;
+// import edu.uark.registerapp.commands.employees.helpers.EmployeeHelper;
 import edu.uark.registerapp.models.api.Employee;
 
 @Entity

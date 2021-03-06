@@ -75,8 +75,7 @@ public abstract class BaseRouteController extends BaseController {
 	}
 
 	protected boolean isElevatedUser(final ActiveUserEntity activeUserEntity) {
-		return EmployeeClassification.isElevatedUser(
-			activeUserEntity.getClassification());
+		return EmployeeClassification.isElevatedUser(activeUserEntity.getClassification());
 	}
 
 	protected ModelAndView buildNoPermissionsResponse() {

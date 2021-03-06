@@ -58,7 +58,7 @@ public class BaseRestController extends BaseController {
 				return this.redirectSessionNotActive(response);
 			} else if (!EmployeeClassification.isElevatedUser(activeUserEntity.getClassification())) {
 				response.setStatus(HttpStatus.FOUND.value());
-
+				
 				return (new ApiResponse())
 					.setRedirectUrl(
 						redirectRoute.concat(

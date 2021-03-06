@@ -65,10 +65,10 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 			this.activeUserRepository.findByEmployeeId(employeeEntity.get().getId());
 
 		// if an activeuser record already exists
-		if (activeUserEntity.isPresent()) {
 			// Update the record's sessionKey property with the provided session key
 			// Use the existing ActiveUserRepository.save() method
 				// ActiveUserRepository extends the CrudRepository which provides the .save() method
+		if (activeUserEntity.isPresent()) {
 			this.activeUserRepository.save(
 				activeUserEntity.get().setSessionKey(this.sessionId));
 		} else {
@@ -89,7 +89,6 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 							.concat(" ")
 							.concat(employeeEntity.get().getLastName())));
 		}
-
 		return employeeEntity.get();
 	}
 

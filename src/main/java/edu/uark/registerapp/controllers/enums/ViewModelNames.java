@@ -6,7 +6,7 @@ public enum ViewModelNames {
 	IS_ELEVATED_USER("isElevatedUser"),
 	PRODUCTS("products"), // Product listing
 	PRODUCT("product"), // Product detail
-	EMPLOYEE_ID("employeeId"); // Sign in  -- Had to ADD IN FOR SignInRouteController TO "WORK" -KR
+	EMPLOYEE_ID("employeeId"); // Sign in  -- Had to ADD IN FOR SignInRouteController TO WORK -KR
 	
 	public String getValue() {
 		return value;

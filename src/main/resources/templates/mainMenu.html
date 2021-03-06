@@ -32,12 +32,14 @@
 		</div>
 
 		<!-- TODO: Add the various action button elements -->
+		
 		<div id = "middleBox">
 			<div>
-				
 				<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')" >Start Transaction</a><br>
 				<a href="/productListing/" class="button menuButton">View Products</a><br>
-				<div th:class="not ${isElevatedUser} ? hidden : ''">
+				<!-- <div th:style="not ${isElevatedUser} ? '' : 'display:none !important' "> -->
+					<div th:class="not ${isElevatedUser} ? hidden : ''" >
+				<!-- <div th:class="not ${isElevatedUser} ? hidden : ''" style = "visibility:hidden;" id="buttons"> -->
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Create Employee</a><br>
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Sales Report</a><br>
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Cashier Report</a><br>
