@@ -37,7 +37,7 @@
 				
 				<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')" >Start Transaction</a><br>
 				<a href="/productListing/" class="button menuButton">View Products</a><br>
-				<div th:class="not ${isElevatedUser} ? 'display:none' ">
+				<div th:class="not ${isElevatedUser} ? 'display:none !important' ">
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Create Employee</a><br>
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Sales Report</a><br>
 					<a class="button menuButton" onclick="alert('Functionality has not yet been implemented.')">Cashier Report</a><br>
