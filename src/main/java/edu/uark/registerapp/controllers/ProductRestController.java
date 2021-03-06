@@ -51,15 +51,15 @@ public class ProductRestController {
 			.execute();
 
 		return new ApiResponse();
-
+	}
 
 	// Properties
 	@Autowired
 	private ProductCreateCommand productCreateCommand;
-	
+
 	@Autowired
 	private ProductDeleteCommand productDeleteCommand;
-	
+
 	@Autowired
 	private ProductUpdateCommand productUpdateCommand;
 }
