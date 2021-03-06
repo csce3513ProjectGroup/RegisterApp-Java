@@ -15,6 +15,7 @@ import edu.uark.registerapp.commands.products.ProductDeleteCommand;
 import edu.uark.registerapp.commands.products.ProductUpdateCommand;
 import edu.uark.registerapp.models.api.ApiResponse;
 import edu.uark.registerapp.models.api.Product;
+import edu.uark.registerapp.controllers.enums.ViewNames;
 
 @RestController
 @RequestMapping(value = "/api/product")
