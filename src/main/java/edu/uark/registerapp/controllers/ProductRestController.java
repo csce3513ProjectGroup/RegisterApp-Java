@@ -50,7 +50,10 @@ public class ProductRestController {
 			.setProductId(productId)
 			.execute();
 
-		return new ApiResponse();
+		//return new ApiResponse();
+		return new ModelAndView(
+		 		REDIRECT_PREPEND.concat(
+		 			ViewNames.PRODUCT_LISTING.getRoute()));
 	}
 
 	// Properties
