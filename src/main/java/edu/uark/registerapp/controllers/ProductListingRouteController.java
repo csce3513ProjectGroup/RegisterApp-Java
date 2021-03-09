@@ -31,8 +31,7 @@ public class ProductListingRouteController {
 				ViewModelNames.PRODUCTS.getValue(),
 				(new Product[0]));
 		}
-		modelAndView.addObject(
-			ViewModelNames.IS_ELEVATED_USER.getValue(), this.isElevatedUser(activeUserEntity.get()));
+		
 		return modelAndView;
 	}
 
