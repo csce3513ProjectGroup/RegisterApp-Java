@@ -26,9 +26,6 @@ public class ProductListingRouteController {
 		if (!activeUserEntity.isPresent()) {
 			return buildInvalidSessionResponse();
 		}
-		// If there is an active user for the current session then 
-			// Should add any error messages received in the query string parameters to the view
-			// Should serve up the Main Menu view/document
 
 		ModelAndView modelAndView =
 			this.setErrorMessageFromQueryString(new ModelAndView(ViewNames.PRODUCT_LISTING.getViewName()), queryParameters);
