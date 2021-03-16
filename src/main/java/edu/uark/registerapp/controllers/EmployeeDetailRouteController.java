@@ -1,6 +1,10 @@
 package edu.uark.registerapp.controllers;
 
 import java.util.UUID;
+import java.util.Map;
+import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +29,7 @@ import edu.uark.registerapp.models.entities.ActiveUserEntity;
 @RequestMapping(value = "/employeeDetail")
 public class EmployeeDetailRouteController extends BaseRouteController {
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView start(@RequestParam final Map<String, String> quearyParameters, final HttpServletRequest request) {
+	public ModelAndView start(@RequestParam final Map<String, String> queryParameters, final HttpServletRequest request) {
 		final boolean activeUserExists = this.activeUserExists();
 		
 		if(activeUserExists)
@@ -91,7 +95,7 @@ public class EmployeeDetailRouteController extends BaseRouteController {
 			modelAndView.addObject(ViewModelNames.EMPLOYEE.getValue(),(new Employee()).setIsInitialEmployee(isInitialEmployee));
 		} else {
 			try {
-				modelAndView.addObject(ViewModelNames.EMPLOYEE.getValue(), this.employeeQuery.setEmployeeId(employeeId).execute().setIsInitialEmployee(isInitialEmployee));
+				modelAndView.addObject(ViewModelNames.EMPLOYEE.getValue(), this.employeeQuery.setEmployeeID(employeeId).execute().setIsInitialEmployee(isInitialEmployee));
 			} catch (final Exception e) {
 				modelAndView.addObject(ViewModelNames.ERROR_MESSAGE.getValue(), e.getMessage());
 				modelAndView.addObject(ViewModelNames.EMPLOYEE.getValue(), (new Employee()).setIsInitialEmployee(isInitialEmployee));
