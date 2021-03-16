@@ -15,21 +15,32 @@ import edu.uark.registerapp.models.api.Product;
 @RequestMapping(value = "/productListing")
 public class ProductListingRouteController {
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView showProductListing() {
-		ModelAndView modelAndView =
-			new ModelAndView(ViewNames.PRODUCT_LISTING.getViewName());
+	public ModelAndView showProductListing(
+		@RequestParam final Map<String, String> queryParameters,
+		final HttpServletRequest request
+	) {
 
+		final Optional<ActiveUserEntity> activeUserEntity =
+			this.getCurrentUser(request);
+		if (!activeUserEntity.isPresent()) {
+			return this.buildInvalidSessionResponse();
+		}
+		// If there is an active user for the current session then 
+			// Should add any error messages received in the query string parameters to the view
+			// Should serve up the Main Menu view/document
+
+		ModelAndView modelAndView =
+			this.setErrorMessageFromQueryString(new ModelAndView(ViewNames.PRODUCT_LISTING.getViewName()), queryParameters);
+
+		modelAndView.addObject(
+			ViewModelNames.IS_ELEVATED_USER.getValue(), this.isElevatedUser(activeUserEntity.get()));
 		try {
 			modelAndView.addObject(
 				ViewModelNames.PRODUCTS.getValue(),
 				this.productsQuery.execute());
 		} catch (final Exception e) {
-			modelAndView.addObject(
-				ViewModelNames.ERROR_MESSAGE.getValue(),
-				e.getMessage());
-			modelAndView.addObject(
-				ViewModelNames.PRODUCTS.getValue(),
-				(new Product[0]));
+			modelAndView.addObject(ViewModelNames.ERROR_MESSAGE.getValue(),e.getMessage());
+			modelAndView.addObject(ViewModelNames.PRODUCTS.getValue(),(new Product[0]));
 		}
 		
 		return modelAndView;
