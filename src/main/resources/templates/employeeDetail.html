@@ -1,0 +1,62 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Register - Product</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" type="text/css" href="/styles/master.css">
+	<link rel="stylesheet" type="text/css" href="/styles/productDetail.css">
+
+	<script type="text/javascript" src="/scripts/master.js" defer></script>
+	<script type="text/javascript" src="/scripts/productDetail.js" defer></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<h1 class="primary-message">Employee Detail</h1>
+	</div>
+		
+	<div id="main " class="main">
+		<div id ="middleBox">
+			<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
+				<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
+			</div>
+	
+			<div class="productDetailWrapper">
+				<table id="productDetails">
+					<tbody>
+						<tr>
+							 <input type="hidden" id="recordId" name="recordId" value="3487"> 
+						</tr>
+						<tr>
+							<label for="employeeId">Employee ID:</label>
+							<input type="text" id="employeeId" name="employeeId"><br>	
+						</tr>
+						<tr>
+							<label for="fname">First Name:</label>
+							<input type="text" id="employeeId" name="employeeId"><br>	
+						</tr>						<tr>
+							<label for="lname">Last Name:</label>
+							<input type="text" id="lname" name="lname"><br>	
+						</tr>						<tr>
+							<label for="password">Password:</label>
+							<input type="text" id="password" name="password"><br>	
+						</tr>						<tr>
+							<label for="cPassword">Cpnfirm Password:</label>
+							<input type="text" id="cPassword" name="cPassword"><br>	
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="employeeActionsWrapper">
+				<br />
+				<button id="saveButton" type="button" class="action">Save</button>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
