@@ -67,6 +67,26 @@
 
 		</div>
 	</div>
+	
+	<div class="hidden">
+		<input type="checkbox" id="isRefreshed" class="hidden">
+		<script type="text/javascript">
+			window.onunload = function() {
+				const isRefreshedElement = document.getElementById("isRefreshed");
+
+				if(!isRefreshedElement.checked) {
+					isRefreshedElement.checked = true;
+				} else {
+					isRefreshedElement.checked = false;
+					location.reload();
+				}
+			}
+		</script>
+	</div>
+
+	<div class="footer">
+		<img src = "/images/signOut.png" id="signOutImage" alt="Sign Out" class="footer" />
+	</div>
 </body>
 
 </html>
