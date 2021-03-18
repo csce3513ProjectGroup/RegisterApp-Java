@@ -26,24 +26,38 @@
 		<form action="#" method="POST" onsubmit="return validateForm(); return false" class="inputContent">
 			<div>
 				<label>Employee ID :</label>
-				<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="text"><br><br>
+				<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="hidden" th:value="${!employee.isEmpty} ? ${employee.id} : ''" /><br><br>
 			</div>
 
+			/*  I left these out because IDK what they do and I couldn't integrate them directly. ~AW
+			<tr class="hidden">
+						<td>Manager ID:</td>
+						<td>
+							<input id="employeeManagerId" type="hidden" th:value="${!employee.isEmpty} ? ${employee.managerId} : ''" />
+						</td>
+					</tr>
+					<tr th:class="${employee.isEmpty} ? hidden : ''">
+						<td class="label">Employee ID:</td>
+						<td>
+							<input id="employeeEmployeeId" type="text" th:value="${!employee.isEmpty} ? ${employee.employeeId} : ''" class="update" disabled />
+						</td>
+					</tr>
+			*/
 			<div>
-				<label for="fname">First Name:</label>
-				<input type="text" id="fname" name="fname"><br><br>
+				<label for="employeeFirstName">First Name:</label>
+				<input type="text" id="employeeFirstName" th:value="${!employee.isEmpty} ? ${employee.firstName} : ''" class="update" name="employeeFirstName"><br><br>
 			</div>						
 			<div>
-				<label for="lname">Last Name:</label>
-				<input type="text" id="lname" name="lname"><br><br>
+				<label for="EmployeeLastName">Last Name:</label>
+				<input type="text" id="employeeLastName" name="employeeLastName"th:value="${!employee.isEmpty} ? ${employee.lastName} : ''" class="update" /><br><br>
 			</div>
 			<div>
-				<label for="password">Password:</label>
-				<input type="text" id="password" name="password"><br><br>
+				<label for="employeePassword">Password:</label>
+				<input type="password" id="employeePassword" name="employeePassword" value = "" class = "update"><br><br>
 			</div>
 			<div>
-				<label for="cPassword">Confirm Password:</label>
-				<input type="text" id="cPassword" name="cPassword"><br><br>
+				<label for="employeeConfirmPassword">Confirm Password:</label>
+				<input type="password" id="employeeConfirmPassword" name="employeeConfirmPassword"><br><br>
 			</div>
 			<div>
 				<label for="emplyeeType">Select Employee Type:</label>
