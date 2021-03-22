@@ -6,7 +6,7 @@ body {
 }
 #middleBox {
 	height:auto;
-	width: 98%;
+	width: auto;
 	border: 2px solid #3a69b0;
 	padding: 10px;
 	margin: auto;
