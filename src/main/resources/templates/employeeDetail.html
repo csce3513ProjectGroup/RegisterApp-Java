@@ -24,7 +24,7 @@
 				<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 			</div>
 
-		<form action="#" method="POST" onsubmit="return validateForm(); return false" class="inputContent">
+		<form action="/" method="POST" onsubmit="return validateForm(); return false" class="inputContent"> <!-- change from "#" to "/" -->
 			<div>
 				<label>Employee ID :</label>
 				<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="hidden" th:value="${!employee.isEmpty} ? ${employee.id} : ''" /><br><br>
