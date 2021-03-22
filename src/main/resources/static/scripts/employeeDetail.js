@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Save
 function saveActionClick(event) {
 	if (!validateSave()) {
-	// if (!validateForm()){
+//	if (!validateForm()){
 		return;
 	}
 
@@ -53,8 +53,8 @@ function saveActionClick(event) {
 	}
 }
 
-//SS validateSave()
 function validateSave() {
+//function validateForm() {
   /*
 	var employeeId = document.getElementById("employeeId").value;
 	var password = document.getElementById("password").value;
