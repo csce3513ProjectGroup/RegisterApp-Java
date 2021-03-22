@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Save
 function saveActionClick(event) {
-//	if (!validateSave()) {
-	if (!validateForm()){
+	if (!validateSave()) {
+	// if (!validateForm()){
 		return;
 	}
 
@@ -54,7 +54,7 @@ function saveActionClick(event) {
 }
 
 //SS validateSave()
-function validateForm() {
+function validateSave() {
   /*
 	var employeeId = document.getElementById("employeeId").value;
 	var password = document.getElementById("password").value;
@@ -75,7 +75,7 @@ function validateForm() {
 		return false;
 		*/
 		
-			const firstNameEditElement = getEmployeeFirstNameEditElement();
+	const firstNameEditElement = getEmployeeFirstNameEditElement();
 	if (firstNameEditElement.value.trim() === "") {
 		displayError("Please provide a valid employee first name.");
 		firstNameEditElement.focus();
@@ -118,7 +118,7 @@ function validateForm() {
 	return true;
 }
 
-  function completeSaveAction(callbackResponse) {
+function completeSaveAction(callbackResponse) {
 	if (callbackResponse.data == null) {
 		return;
 	}
@@ -161,6 +161,7 @@ function hideEmployeeSavedAlertModal() {
 	getSavedAlertModalElement().style.display = "none";
 }
 // End save
+
 //Getters and setters
 function getEmployeeId() {
 	return document.getElementById("employeeId").value;
@@ -202,6 +203,4 @@ function getEmployeeConfirmPassword() {
 
 function getEmployeeTypeSelectElement() {
 	return document.getElementById("employeeType");
-}
-
 }
