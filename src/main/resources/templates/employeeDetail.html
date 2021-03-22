@@ -47,19 +47,19 @@
 			
 			<div>
 				<label for="employeeFirstName">First Name:</label>
-				<input type="text" id="employeeFirstName" th:value="${!employee.isEmpty} ? ${employee.firstName} : ''" class="update" name="employeeFirstName"><br><br>
+				<input type="text" id="employeeFirstName" placeholder="Type Your First Name" th:value="${!employee.isEmpty} ? ${employee.firstName} : ''" class="update" name="employeeFirstName"><br><br>
 			</div>						
 			<div>
 				<label for="EmployeeLastName">Last Name:</label>
-				<input type="text" id="employeeLastName" name="employeeLastName"th:value="${!employee.isEmpty} ? ${employee.lastName} : ''" class="update" /><br><br>
+				<input type="text" id="employeeLastName" name="employeeLastName" placeholder="Type Your Last Name" th:value="${!employee.isEmpty} ? ${employee.lastName} : ''" class="update" /><br><br>
 			</div>
 			<div>
 				<label for="employeePassword">Password:</label>
-				<input type="password" id="employeePassword" name="employeePassword" value = "" class = "update"><br><br>
+				<input type="password" id="employeePassword" name="employeePassword" value = "" placeholder="Create Your Password" class = "update"><br><br>
 			</div>
 			<div>
 				<label for="employeeConfirmPassword">Confirm Password:</label>
-				<input type="password" id="employeeConfirmPassword" name="employeeConfirmPassword"><br><br>
+				<input type="password" id="employeeConfirmPassword" name="employeeConfirmPassword" placeholder="Type Your Password Again"><br><br>
 			</div>
 			<div>
 				<label for="emplyeeType">Select Employee Type:</label>
