@@ -24,7 +24,7 @@
 				<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 			</div>
 
-		<form action="/" method="POST" onsubmit="return validateForm(); return false" class="inputContent"> <!-- change from "#" to "/" -->
+		<form action="/" method="POST" onsubmit="return validateSave(); return false" class="inputContent"> <!-- change from "#" to "/" -->
 			<div>
 				<label>Employee ID :</label>
 				<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="hidden" th:value="${!employee.isEmpty} ? ${employee.id} : ''" /><br><br>
@@ -69,7 +69,7 @@
 						<option value="gManager">General Manager</option>
 					</select><br>
 			</div>
-			<button onclick="validateForm(); return false;">Save</button><br>
+			<button onclick="validateSave(); return false;">Save</button><br>
 		</form>
 		</div>
 	</div>
