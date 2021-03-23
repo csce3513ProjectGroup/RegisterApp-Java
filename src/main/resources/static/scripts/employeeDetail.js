@@ -39,7 +39,7 @@ function saveActionClick(event) {
 			saveActionElement.disabled = false;
 
 			if (isSuccessResponse(callbackResponse)) {
-				displayError("Saved correctly.");  	//change here
+				displayError("Try correctly.");  	//change here
 				completeSaveAction(callbackResponse);
 			}
 		});
@@ -48,7 +48,7 @@ function saveActionClick(event) {
 			saveActionElement.disabled = false;
 
 			if (isSuccessResponse(callbackResponse)) {
-				displayError("Try Correctly.");		//change here
+				displayError("Saved Correctly.");		//change here
 				completeSaveAction(callbackResponse);
 			}
 		});
