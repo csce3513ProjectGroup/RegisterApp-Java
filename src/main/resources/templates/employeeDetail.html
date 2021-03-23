@@ -26,7 +26,8 @@
 
 		<form action="/" method="POST" onsubmit="return validateSave(); return false" class="inputContent"> 
 			<!-- change from "#" to "/" -->
-					<table id="employeeDetails">
+			<!-- snowcycle table implementation -->
+			<table id="employeeDetails">
 				<tbody>
 					<tr class="hidden">
 						<td>ID:</td>
@@ -79,13 +80,12 @@
 						</td>
 					</tr>
 				</tbody>
-			</table> <!--
+			</table> 
+			<!-- non-table implementation
 			<div>
 				<label>Employee ID :</label>
 				<input id="employeeId" name="employeeId" placeholder="Emplyee ID" type="hidden" th:value="${!employee.isEmpty} ? ${employee.id} : ''" /><br><br>
 			</div>
-
-		!--	  I left these out because IDK what they do and I couldn't integrate them directly. ~AW --
 			<tr class="hidden">
 						<td>Manager ID:</td>
 						<td>
@@ -126,10 +126,13 @@
 			</div>-->
 
 			<button onclick="validateSave(); return false;">Save</button><br> 
+
+			<!-- snowcycle save button implementation-->
 			<div class="employeeActionsWrapper" th:classappend="not ${#strings.isEmpty(errorMessage)} ? hidden : ''">
 				<br />
 				<button id="saveButton" type="button" class="action">Save</button>
 			</div>
+
 		</form>
 		</div>
 	</div>
@@ -155,7 +158,9 @@
 	</div>
 </body>
 
-</html> <!--
+</html> 
+
+<!-- Snowcycle code:
 
 <html xmlns:th="https://www.thymeleaf.org">
 
