@@ -24,7 +24,7 @@
 				<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 			</div>
 
-		<form action="/" method="POST" onsubmit="return validateSave(); return false" class="inputContent"> 
+			<form action="/" method="POST" onsubmit="return validateSave(); return false" class="inputContent"> 
 			<!-- change from "#" to "/" -->
 			<!-- snowcycle table implementation -->
 			<table id="employeeDetails">
@@ -124,19 +124,27 @@
 						<option value="gManager">General Manager</option>
 					</select><br>
 			</div>-->
-
-			<button onclick="validateSave(); return false;">Save</button><br> 
-
+		</form>
+		<button onclick="validateSave(); return false;">Save</button><br>
+	</div>
+			 
+		
 			<!-- snowcycle save button implementation-->
 			<div class="employeeActionsWrapper" th:classappend="not ${#strings.isEmpty(errorMessage)} ? hidden : ''">
 				<br />
 				<button id="saveButton" type="button" class="action">Save</button>
 			</div>
-
-		</form>
-		</div>
-	</div>
-	
+			
+			<div id="employeeSavedAlertModal" class="modal animate-opacity-show">
+				<div class="modal-content">
+					<div class="container gray-blue">
+						<h1>
+							<span>Employee</span><br />
+							<span>Saved</span>
+						</h1>
+					</div>
+				</div>
+			</div>
 	<div class="hidden">
 		<input type="checkbox" id="isRefreshed" class="hidden">
 		<script type="text/javascript">
