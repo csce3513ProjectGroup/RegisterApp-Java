@@ -52,17 +52,16 @@
 			
 			<div class="productActionsWrapper">
 				<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''" >
-
-					<br />
-						<div th:class="not ${isElevatedUser} ? hidden : ''" >
-						<button id="deleteButton" type="button" class="action">Delete</button>
+					<div th:class="not ${isElevatedUser} ? hidden : ''" >
 						<br />
-						<br />
+							<button id="deleteButton" type="button" class="action">Delete</button>
+							<br />
+							<br />
+						</div>
+						</div>
+						<button id="saveButton" type="button" class="action">Save</button>
+						<a href="/productListing/" class="button menuButton">Back</a><br>
 					</div>
-					</div>
-					<button id="saveButton" type="button" class="action">Save</button>
-					<a href="/productListing/" class="button menuButton">Back</a><br>
-
 				</div>
 			</div>
 
