@@ -50,8 +50,9 @@
 				</div>
 			</div>
 			
-			<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''" >
-				<div class="productActionsWrapper">
+			<div class="productActionsWrapper">
+				<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''" >
+
 					<br />
 						<div th:class="not ${isElevatedUser} ? hidden : ''" >
 						<button id="deleteButton" type="button" class="action">Delete</button>
