@@ -24,7 +24,7 @@
 			</div>
 	
 			<div class="productDetailWrapper">
-				<div th:class="not ${isElevatedUser} ? disabled : ''" >
+				
 				<table id="productDetails">
 					<tbody>
 						<tr class="hidden">
@@ -34,16 +34,20 @@
 							</td>
 						</tr>
 						<tr>
+							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Lookup Code:</td>
 							<td>
 								<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" />
 							</td>
+							</div>
 						</tr>
 						<tr>
+							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Count:</td>
 							<td>
 								<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" />
 							</td>
+							</div>
 						</tr>
 					</tbody>
 				</table>
