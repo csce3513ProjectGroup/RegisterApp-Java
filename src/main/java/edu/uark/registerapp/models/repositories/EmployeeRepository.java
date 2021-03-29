@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import org.springframework.data.repository.CrudRepository;
 
-import edu.uark.registerapp.models.api.Employee;
 import edu.uark.registerapp.models.entities.EmployeeEntity;
 
 public interface EmployeeRepository extends CrudRepository<EmployeeEntity, UUID> {
@@ -13,6 +12,4 @@ public interface EmployeeRepository extends CrudRepository<EmployeeEntity, UUID>
 	boolean existsByEmployeeId(int employeeId);
 	Optional<EmployeeEntity> findById(UUID id);
 	Optional<EmployeeEntity> findByEmployeeId(int employeeId);
-
-	EmployeeEntity save(Employee e);
 }
