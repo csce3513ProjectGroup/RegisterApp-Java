@@ -20,6 +20,10 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	public Employee execute() {
 		this.validateProperties();
 
+		if (this.apiEmployee.getClassification() == 701 || this.apiEmployee.getClassification() == 501) {
+			this.apiEmployee.setManagerId(UUID.randomUUID());
+		}
+
 		if (this.isInitialEmployee) {
 			this.apiEmployee.setClassification(
 				EmployeeClassification.GENERAL_MANAGER.getClassification());
@@ -34,12 +38,6 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 		this.apiEmployee.setPassword(StringUtils.EMPTY);
 		this.apiEmployee.setCreatedOn(employeeEntity.getCreatedOn());
 		this.apiEmployee.setEmployeeId(EmployeeHelper.padEmployeeId(employeeEntity.getEmployeeId()));
-
-		if (this.apiEmployee.getClassification() == 701 || this.apiEmployee.getClassification() == 501) {
-			System.out.println(this.apiEmployee.getClassification());
-			this.apiEmployee.setManagerId(UUID.randomUUID());
-			// System.out.println(UUID.randomUUID());
-		}
 	
 		return this.apiEmployee;
 	}
