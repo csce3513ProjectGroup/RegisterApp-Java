@@ -37,7 +37,7 @@
 							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Lookup Code:</td>
 							<td>
-								<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" />
+								<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" disabled/>
 							</td>
 							</div>
 						</tr>
@@ -45,7 +45,7 @@
 							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Count:</td>
 							<td>
-								<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" />
+								<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" disabled/>
 							</td>
 							</div>
 						</tr>
@@ -66,7 +66,6 @@
 						<br />
 						<br />
 						<a href="/productListing/" class="button menuButton">Back</a><br>
-					
 				</div>
 			</div>
 
