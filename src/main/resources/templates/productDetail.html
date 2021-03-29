@@ -24,7 +24,6 @@
 			</div>
 	
 			<div class="productDetailWrapper">
-				
 				<table id="productDetails">
 					<tbody>
 						<tr class="hidden">
@@ -37,7 +36,7 @@
 							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Lookup Code:</td>
 							<td>
-								<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" disabled/>
+								<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" th:disabled="not ${isElevatedUser}"/>
 							</td>
 							</div>
 						</tr>
@@ -45,7 +44,7 @@
 							<div th:class="not ${isElevatedUser} ? disabled : ''" >
 							<td class="label">Count:</td>
 							<td>
-								<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" disabled/>
+								<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" th:disabled="not ${isElevatedUser}"/>
 							</td>
 							</div>
 						</tr>
@@ -53,21 +52,22 @@
 				</table>
 				</div>
 			</div>
-			
+
 			<div class="productActionsWrapper">
-				<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''" >
-					<div th:class="not ${isElevatedUser} ? hidden : ''" >
+				<div th:class="not ${isElevatedUser} ? hidden : ''" >
+					<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''" >
 						<br />
-							<button id="deleteButton" type="button" class="action">Delete</button>
-							<br />
-							<br />
-						<button id="saveButton" type="button" class="action">Save</button>
-						</div>
+						<button id="deleteButton" type="button" class="action">Delete</button>
 						<br />
-						<br />
-						<a href="/productListing/" class="button menuButton">Back</a><br>
+					</div>
+					<br />
+					<button id="saveButton" type="button" class="action">Save</button>
+					<br /> 
+					<br /> 
+					<a href="/productListing/" class="button menuButton">Back</a> 
+					<br />
 				</div>
-			</div>
+			</div>			
 
 			<div id="productSavedAlertModal" class="modal animate-opacity-show">
 				<div class="modal-content">
@@ -80,6 +80,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="footer">
+		<img id="signOutImage" src="/images/signOut.png" alt="Sign Out" class="footer" />
 	</div>
 </body>
 
