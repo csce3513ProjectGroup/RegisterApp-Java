@@ -20,13 +20,13 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	public Employee execute() {
 		this.validateProperties();
 
-		if (this.apiEmployee.getClassification() == 701 || this.apiEmployee.getClassification() == 501) {
-			this.apiEmployee.setManagerId(UUID.randomUUID());
-		}
-
 		if (this.isInitialEmployee) {
 			this.apiEmployee.setClassification(
 				EmployeeClassification.GENERAL_MANAGER.getClassification());
+		}
+
+		if (this.apiEmployee.getClassification() == 701 || this.apiEmployee.getClassification() == 501) {
+			this.apiEmployee.setManagerId(UUID.randomUUID());
 		}
 
 		 // Create a new ENTITY object from the API object details.
