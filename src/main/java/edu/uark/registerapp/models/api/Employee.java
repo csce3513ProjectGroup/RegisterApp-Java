@@ -82,7 +82,10 @@ public class Employee extends ApiResponse {
 		return this.managerId;
 	}
 	public Employee setManagerId(final UUID managerId) {
+		System.out.println("setting ManagerId ln85");
+		System.out.println(this.getManagerId());
 		this.managerId = managerId;
+		System.out.println(this.getManagerId());
 		return this;
 	}
 
