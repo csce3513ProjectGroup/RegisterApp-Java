@@ -19,8 +19,8 @@ select.update {
 	width: 100px !important;
 }
 #middleBox {
-	height:auto;
-	width: auto;
+	height: 84%;
+	width: 98%;
 	border: 2px solid #3a69b0;
 	padding: 10px;
 	margin: auto;
