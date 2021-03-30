@@ -20,8 +20,8 @@ function validateForm() {
 		}
 	}
 	else{
-		document.getElementById("errorMessage").innerHTML = "Please do not keep blank Employee ID & Password"
-		alert("Please do not keep blank Employee ID & Password");
+		document.getElementById("errorMessage").innerHTML = "Please do not leave Employee ID & Password blank."
+		alert("Please do not leave Employee ID & Password blank.");
 		return false;
 	}
 }

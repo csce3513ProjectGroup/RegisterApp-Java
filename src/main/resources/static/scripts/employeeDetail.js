@@ -39,7 +39,7 @@ function saveActionClick(event) {
 			saveActionElement.disabled = false;
 
 			if (isSuccessResponse(callbackResponse)) {
-				displayError("Try correctly.");  	//change here
+				displayError("Error saving employee record, please try again.");  	//change here
 				completeSaveAction(callbackResponse);
 			}
 		});
@@ -48,7 +48,7 @@ function saveActionClick(event) {
 			saveActionElement.disabled = false;
 
 			if (isSuccessResponse(callbackResponse)) {
-				displayError("Saved Correctly.");		//change here
+				displayError("Employee Record Saved.");		//change here
 				completeSaveAction(callbackResponse);
 			}
 		});
