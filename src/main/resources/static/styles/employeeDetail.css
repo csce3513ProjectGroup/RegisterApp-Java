@@ -1,0 +1,29 @@
+.employeeDetailWrapper {
+	display: inline-block;
+}
+body {
+	background-color:#214d9e !important;
+}
+select.update {
+	border: 2px solid #ededed;
+	line-height: 1.75em;
+	width: calc(100% - 6px);
+	background-color: #FFFFFF;
+	font-size: 16px;
+	padding: 0em .25em 0em .25em;
+}
+.save{
+	display:inline-block;
+	margin-top:22px !important;
+	height: 30px !important;
+	width: 100px !important;
+}
+#middleBox {
+	height: 84%;
+	width: 98%;
+	border: 2px solid #3a69b0;
+	padding: 10px;
+	margin: auto;
+	background-color:#f0f2f5;
+	display:block;
+}
