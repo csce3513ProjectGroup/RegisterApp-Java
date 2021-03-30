@@ -21,8 +21,13 @@
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
 		<div id = "middleBox" class="productsWrapper">
+<<<<<<< HEAD
 			<!--<div th:class=" ${isElevatedUser} ? hidden : ''" > -->
 			<div>
+=======
+			<br />
+			<div th:class="not ${isElevatedUser} ? hidden : ''" >
+>>>>>>> Sprint3
 				<a href="/productDetail/" class="button">Create New</a>
 			</div>
 			
