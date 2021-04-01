@@ -76,22 +76,23 @@
 				</tbody>
 			</table> 
 		</form>
-	</div>
-	<div class="employeeActionsWrapper" th:classappend="not ${#strings.isEmpty(errorMessage)} ? hidden : ''">
-		<br />
-		<button id="saveButton" type="button" class="action">Save</button>
-		<a href="/mainMenu/" class="button">Main Menu </a>
-	</div>
-	<div id="employeeSavedAlertModal" class="modal animate-opacity-show">
-		<div class="modal-content">
-			<div class="container gray-blue">
-				<h1>
-					<span>Employee</span><br />
-					<span>Saved</span>
-				</h1>
+		<div class="employeeActionsWrapper" th:classappend="not ${#strings.isEmpty(errorMessage)} ? hidden : ''">
+			<br />
+			<button id="saveButton" type="button" class="action">Save</button>
+			<a href="/mainMenu/" class="button">Main Menu </a>
+		</div>
+		<div id="employeeSavedAlertModal" class="modal animate-opacity-show">
+			<div class="modal-content">
+				<div class="container gray-blue">
+					<h1>
+						<span>Employee</span><br />
+						<span>Saved</span>
+					</h1>
+				</div>
 			</div>
 		</div>
 	</div>
+	
 	<div class="hidden">
 		<input type="checkbox" id="isRefreshed" class="hidden">
 		<script type="text/javascript">
